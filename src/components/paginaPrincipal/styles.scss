@@ -1,0 +1,86 @@
+body {
+    background-color: #343541;
+    font-family: Arial, Helvetica;
+
+    .contenedorChat {
+        display: flex;
+        // align-items: center;
+        .barraGuardado {
+            display: flex;
+            flex-direction: column;
+            background-color: black;
+            padding: 10px;
+            color: #ececf1;
+            width: 100%;
+            max-width: 200px;
+            height: 94vh;
+            position: sticky;
+            top: 0;
+            bottom: 0;
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                max-width: 28px;
+                height: 28px;
+                border-radius: 20px;
+            }
+        }
+        .chatPrincipal {
+            display: flex;
+            // align-items: center;
+            flex-direction: column;
+            width: 100%;
+            max-width: 766px;
+            margin: 0 auto;
+            gap: 35px;
+            .contenedorInput {
+                width: 100%;
+                max-width: 800px;
+                display: flex;
+                align-items: center;
+                border: rgb(106, 106, 106) solid 1px;
+                border-radius: 15px;
+                padding: 7px;
+                margin-top: auto;
+                position: sticky;
+                top: 0;
+                bottom: 0;
+                background-color: #343541;
+
+                input {
+                    // padding: 14px 48px 14px 16px;
+                    width: 100%;
+                    background-color: #343541;
+                    border: none;
+                    color: white;
+                }
+                .btnEnviar {
+                    padding: 2px;
+                    border: none;
+                    border-radius: 10px;
+                    width: 100%;
+                    max-width: 30px;
+                    height: 30px;
+                    background-color: white;
+                    text-align: center;
+                    margin-left: auto;
+                    &:hover {
+                        background-color: black;
+                        color: white;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .contenedorTexto {
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    max-width: 24px;
+                    height: 24px;
+                    border-radius: 20px;
+                }
+            }
+        }
+    }
+}
