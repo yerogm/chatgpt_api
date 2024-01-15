@@ -101,9 +101,9 @@ const ChatPrincipal = () => {
                 </div>
                 <div>
                     <hr />
-                    <span>Guardado 1</span>
-
-                    {/* {chat.name} */}
+                    {elementosFirebase.map((object) => (
+                        <h1 className="textoHistorial">{object.pregunta}</h1>
+                    ))}
                 </div>
             </div>
             <div className="chatPrincipal">
