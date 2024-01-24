@@ -1,6 +1,7 @@
 body {
     background-color: #343541;
     font-family: Arial, Helvetica;
+    margin: 0;
 
     .contenedorChat {
         display: flex;
@@ -12,11 +13,25 @@ body {
             padding: 10px;
             color: #ececf1;
             width: 100%;
-            max-width: 200px;
-            height: 94vh;
+            max-width: 240px;
+            height: 100vh;
             position: sticky;
             top: 0;
             bottom: 0;
+            .logoChat {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                text-decoration: none;
+                color: white;
+                margin: 7px;
+
+                &:hover {
+                    background-color: #242323;
+                    width: 100%;
+                    border-radius: 10px;
+                }
+            }
 
             img {
                 object-fit: cover;
@@ -26,8 +41,11 @@ body {
                 border-radius: 20px;
             }
             .textoHistorial {
+                white-space: nowrap;
+                overflow: hidden;
                 font-size: 15px;
                 padding: 8px;
+                color: white;
 
                 &:hover {
                     background-color: rgb(32, 31, 31);
@@ -37,6 +55,11 @@ body {
                 }
             }
         }
+        .textoHistorial {
+            white-space: nowrap;
+            overflow: hidden;
+            // text-overflow: ellipsis; este sirve para poner los 3 puntos(...)
+        }
         .chatPrincipal {
             display: flex;
             // align-items: center;
@@ -45,6 +68,7 @@ body {
             max-width: 766px;
             margin: 0 auto;
             gap: 35px;
+            margin-left: 8px;
             .contenedorInput {
                 width: 100%;
                 max-width: 800px;

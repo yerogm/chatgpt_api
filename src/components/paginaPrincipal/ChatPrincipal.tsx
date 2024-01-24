@@ -5,10 +5,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import OpenAI from "openai";
 import { addDoc, collection, getDocs } from "firebase/firestore";
 import { db } from "../firebaseConfig/firebase";
+import { Link } from "react-router-dom";
 
-interface ChatItem {
+export interface ChatItem {
     pregunta: string;
     respuesta: string;
+    id: string;
 }
 
 const openai = new OpenAI({
@@ -49,6 +51,7 @@ const ChatPrincipal = () => {
                 const chatItem: ChatItem = {
                     pregunta: textoPregunta,
                     respuesta: contenido ?? "---",
+                    id: "",
                 };
                 setHistorial([...historial, chatItem]);
                 setMensajeGuardado(chatItem);
@@ -102,7 +105,20 @@ const ChatPrincipal = () => {
                 <div>
                     <hr />
                     {elementosFirebase.map((object) => (
-                        <h1 className="textoHistorial">{object.pregunta}</h1>
+                        <div>
+                            <Link
+                                to={"/barraHistorial/" + object.id}
+                                style={{
+                                    textDecoration: "none",
+                                }} /*+ historial.map((item)=>(
+                                item.id
+                            ))} */
+                            >
+                                <h1 className="textoHistorial">
+                                    {object.pregunta}
+                                </h1>
+                            </Link>
+                        </div>
                     ))}
                 </div>
             </div>
